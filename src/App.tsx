@@ -135,7 +135,13 @@ export default function App() {
         )}
       </header>
 
-      <main className="main-panel">
+      <main
+        className={
+          step === 'landing' || step === 'result'
+            ? 'main-panel main-panel-wide'
+            : 'main-panel'
+        }
+      >
         {step === 'landing' && <Landing onStart={startQuiz} />}
         {step === 'quiz' && (
           <Quiz
