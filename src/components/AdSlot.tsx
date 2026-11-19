@@ -34,7 +34,8 @@ export function AdSlot({ format, slotId }: AdSlotProps) {
       role="complementary"
       aria-label="広告"
     >
-      <span className="ad-slot-label">広告</span>
+      {/* Review mode: solid black placement blocks (label/text visually hidden) */}
+      <span className="ad-slot-label sr-only">広告</span>
       <div
         className="ad-slot-frame"
         style={{
@@ -43,8 +44,8 @@ export function AdSlot({ format, slotId }: AdSlotProps) {
         }}
       >
         {/* TODO(AdSense): inject unit for data-ad-slot={slotId} here */}
-        <span className="ad-slot-size">{meta.sizeLabel}</span>
-        <span className="ad-slot-todo">広告枠（準備中）</span>
+        <span className="ad-slot-size sr-only">{meta.sizeLabel}</span>
+        <span className="ad-slot-todo sr-only">広告枠（準備中）</span>
       </div>
     </div>
   )
